@@ -1,4 +1,5 @@
 import streamlit as st
+from pawpal_system import Owner, Pet, Task, Scheduler
 
 st.set_page_config(page_title="PawPal+", page_icon="🐾", layout="centered")
 
@@ -42,6 +43,7 @@ st.subheader("Quick Demo Inputs (UI only)")
 owner_name = st.text_input("Owner name", value="Jordan")
 pet_name = st.text_input("Pet name", value="Mochi")
 species = st.selectbox("Species", ["dog", "cat", "other"])
+available_time = st.number_input("Available time (minutes)", min_value=1, max_value=300, value=60)
 
 st.markdown("### Tasks")
 st.caption("Add a few tasks. In your final version, these should feed into your scheduler.")
@@ -74,15 +76,40 @@ st.subheader("Build Schedule")
 st.caption("This button should call your scheduling logic once you implement it.")
 
 if st.button("Generate schedule"):
-    st.warning(
-        "Not implemented yet. Next step: create your scheduling logic (classes/functions) and call it here."
-    )
-    st.markdown(
-        """
-Suggested approach:
-1. Design your UML (draft).
-2. Create class stubs (no logic).
-3. Implement scheduling behavior.
-4. Connect your scheduler here and display results.
-"""
-    )
+    owner = Owner(owner_name, int(available_time), "High priority tasks first")
+    pet = Pet(pet_name, species, 1, "No health notes")
+
+    task_objects = []
+
+    priority_map = {
+        "low": 1,
+        "medium": 2,
+        "high": 3
+    }
+
+    for task in st.session_state.tasks:
+        new_task = Task(
+            task_name=task["title"],
+            duration=task["duration_minutes"],
+            priority=priority_map[task["priority"]],
+            category="General"
+        )
+        pet.add_task(new_task)
+        task_objects.append(new_task)
+
+    owner.add_pet(pet)
+
+    scheduler = Scheduler(task_objects, owner.available_time)
+    daily_plan = scheduler.generate_daily_plan()
+
+    st.success("Schedule generated successfully!")
+
+    if daily_plan:
+        st.subheader("Today's Schedule")
+        for task in daily_plan:
+            st.write(f"- {task.task_name} ({task.duration} min, priority {task.priority})")
+
+        st.subheader("Why this plan was chosen")
+        st.write(scheduler.explain_plan())
+    else:
+        st.warning("No tasks could fit into the available time.")
