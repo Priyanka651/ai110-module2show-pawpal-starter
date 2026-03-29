@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
     class Owner {
         +name
@@ -8,6 +9,7 @@ classDiagram
         +set_available_time(time)
         +update_preferences(preferences)
     }
+
     class Pet {
         +name
         +pet_type
@@ -17,6 +19,7 @@ classDiagram
         +add_task(task)
         +view_tasks()
     }
+
     class Task {
         +task_name
         +duration
@@ -26,6 +29,7 @@ classDiagram
         +mark_complete()
         +update_priority(new_priority)
     }
+
     class Scheduler {
         +tasks
         +available_time
@@ -33,6 +37,8 @@ classDiagram
         +generate_daily_plan()
         +explain_plan()
     }
+
     Owner --> Pet : owns
     Pet --> Task : contains
     Scheduler --> Task : schedules
+```
