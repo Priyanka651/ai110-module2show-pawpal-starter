@@ -78,8 +78,9 @@ This tradeoff is reasonable for this scenario because pet care often includes es
 I used AI tools to help me understand the project requirements, design the system structure, and implement the code step by step.
 
 AI was especially helpful for breaking down the problem into smaller steps, generating UML design ideas, and helping me write Python class structures and scheduling logic. It also helped me debug errors and understand how to connect my backend logic with the Streamlit UI.
-
 The most helpful prompts were simple and specific questions, such as asking how to implement scheduling logic, how to structure classes, and how to fix errors step by step.
+
+Using separate chat sessions for different phases helped me stay organized and focused. I was able to separate design discussions, implementation logic, and debugging steps without confusion. This made it easier to track progress and avoid mixing different parts of the project.
 -------------------
 
 **b. Judgment and verification**
@@ -128,7 +129,6 @@ If I had more time, I would test additional edge cases, such as when no tasks fi
 - What part of this project are you most satisfied with?
 
 The part of this project I am most satisfied with is successfully connecting the backend logic with the Streamlit UI.
-
 It was rewarding to see the full system working, where user inputs are taken from the interface, processed through the scheduling logic, and then displayed as a daily plan with an explanation. This helped me understand how frontend and backend components work together.
 
 **b. What you would improve**
@@ -136,7 +136,6 @@ It was rewarding to see the full system working, where user inputs are taken fro
 - If you had another iteration, what would you improve or redesign?
 
 If I had another iteration, I would improve the system by allowing users to add multiple pets and dynamically manage tasks, such as editing or deleting them.
-
 I would also enhance the scheduling logic to consider additional constraints, such as specific time slots or task dependencies, and improve the user interface to make it more interactive and user-friendly.
 
 **c. Key takeaway**
@@ -144,5 +143,4 @@ I would also enhance the scheduling logic to consider additional constraints, su
 - What is one important thing you learned about designing systems or working with AI on this project?
 
 One important thing I learned from this project is how to design a system step by step before jumping into coding.
-
 Using AI as a guide helped me break down complex problems into smaller parts, but I also learned the importance of verifying and understanding the code rather than blindly using suggestions. This improved both my problem-solving skills and confidence in building applications.
