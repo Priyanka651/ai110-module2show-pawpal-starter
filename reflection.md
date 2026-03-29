@@ -55,7 +55,7 @@ The scheduler considers three main constraints: available time, task priority, a
 
 Available time is important because the owner may not have enough time to complete every task in one day. Task priority matters because more important care activities, such as feeding or medicine, should be selected before lower-priority tasks. The scheduler also skips tasks that are already completed.
 
-## I decided these constraints mattered most because they directly affect how a practical pet care schedule should be built. The system should choose the most important unfinished tasks while staying within the owner’s available time.
+I decided these constraints mattered most because they directly affect how a practical pet care schedule should be built. The system should choose the most important unfinished tasks while staying within the owner’s available time.
 
 **b. Tradeoffs**
 
@@ -66,7 +66,7 @@ Available time is important because the owner may not have enough time to comple
 
 One tradeoff my scheduler makes is that it always prioritizes higher-priority tasks, even if that means some lower-priority tasks that could also fit are not selected first.
 
-## This tradeoff is reasonable for this scenario because pet care often includes essential tasks, such as feeding, medicine, or urgent walks, that should be completed before less important activities. Choosing higher-priority tasks first makes the daily plan more useful and realistic.`
+This tradeoff is reasonable for this scenario because pet care often includes essential tasks, such as feeding, medicine, or urgent walks, that should be completed before less important activities. Choosing higher-priority tasks first makes the daily plan more useful and realistic.
 
 ## 3. AI Collaboration
 

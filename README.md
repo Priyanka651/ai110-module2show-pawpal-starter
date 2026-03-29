@@ -22,6 +22,8 @@ Your final app should:
 - Display the plan clearly (and ideally explain the reasoning)
 - Include tests for the most important scheduling behaviors
 
+![PawPal App Screenshot](uml_final.png)
+
 ## Getting started
 
 ### Setup

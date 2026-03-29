@@ -81,13 +81,3 @@ class Scheduler:
 
         return f"The daily plan includes {task_list}. These tasks were selected because they are incomplete, have higher priority, and fit within the available time."
 
-def explain_plan(self) -> str:
-    daily_plan = self.generate_daily_plan()
-
-    if not daily_plan:
-        return "No tasks were selected because none could fit within the available time."
-
-    task_names = [task.task_name for task in daily_plan]
-    task_list = ", ".join(task_names)
-
-    return f"The daily plan includes {task_list}. These tasks were selected because they are incomplete, have higher priority, and fit within the available time."

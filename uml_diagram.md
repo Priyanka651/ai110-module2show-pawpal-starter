@@ -3,16 +3,18 @@ classDiagram
         +name
         +available_time
         +preferences
-        +add_pet()
-        +set_available_time()
-        +update_preferences()
+        +pets: List[Pet]
+        +add_pet(pet)
+        +set_available_time(time)
+        +update_preferences(preferences)
     }
     class Pet {
         +name
         +pet_type
         +age
         +health_notes
-        +add_task()
+        +tasks: List[Task]
+        +add_task(task)
         +view_tasks()
     }
     class Task {
@@ -22,7 +24,7 @@ classDiagram
         +category
         +completed
         +mark_complete()
-        +update_priority()
+        +update_priority(new_priority)
     }
     class Scheduler {
         +tasks
@@ -31,6 +33,6 @@ classDiagram
         +generate_daily_plan()
         +explain_plan()
     }
-    Owner --> Pet : has
-    Pet --> Task : has
-    Scheduler --> Task : manages    
+    Owner --> Pet : owns
+    Pet --> Task : contains
+    Scheduler --> Task : schedules
